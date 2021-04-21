@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { error } from 'selenium-webdriver';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 
@@ -10,10 +11,12 @@ import { StudentService } from '../student.service';
 export class StudentAllComponent implements OnInit {
 
   students:Student[]=[];
+  message:string='';
   constructor(private service: StudentService) { }
 
   ngOnInit(): void {
     this.getAllStudent();
+  
   }
   getAllStudent()
   {
@@ -24,6 +27,19 @@ export class StudentAllComponent implements OnInit {
         console.log(error);
       }
       );
+  }
+  
+  deleteStudent(id:number)
+  {
+    console.log('data is'+id);
+    this.service.deleteStudent(id).subscribe(
+      (data)=>{
+        this.message=data,
+        this.getAllStudent()
+      },
+      (error)=>{console.log(error)}
+
+    );
   }
 
 }

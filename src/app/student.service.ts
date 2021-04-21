@@ -15,4 +15,13 @@ export class StudentService {
   {
     return this.http.get<Student[]>(`${this.baseUrl}/all`);
   }
+  deleteStudent(id:number):Observable<any>
+  {
+    return this.http.delete(`${this.baseUrl}/delete/${id}`,{responseType:'text'});
+  }
+  createStudent(student:Student):Observable<Student>
+  {
+    return this.http.post<Student>(`${this.baseUrl}/create`,student);
+  }
+ 
 }

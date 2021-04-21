@@ -1,1 +1,18 @@
-<p>student-create works!</p>
+<div class="container">
+<form #studentForm="ngForm" (ngSubmit)="onSumbit(studentForm.value)">
+    <div class="form-group">
+      <label for="sname">Student Name:</label>
+      <input type="text" class="form-control" placeholder="Enter Name" id="sname" name="sname" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="cname">Student Course:</label>
+      <input type="text" class="form-control" placeholder="Enter Course" id="cname" name="cname" ngModel>
+    
+    </div>
+    <div class="form-group">
+        <label for="sname">Student Fees:</label>
+        <input type="text" class="form-control" placeholder="Enter Name" id="sname" name="cfee" ngModel>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

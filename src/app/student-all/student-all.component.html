@@ -1,4 +1,6 @@
+<div class="container">
 <h3 class="text-center text-primary">All Student</h3>
+<div class="alert-success text-center">{{message}}</div>
 <table class="table">
     <tr class="text-success">
         <th>ID </th>
@@ -17,11 +19,14 @@
         <td>{{stud.cdisc}}</td>
         <td>{{stud.gst}}</td>
         <td>
-            <button class="btn btn-outline-warning btn-sm m-2">Edit</button>
-            <button class="btn btn-outline-danger btn-sm ">Delete</button>
+            <button class="btn btn-outline-warning btn-sm m-2" >Edit</button>
+            <button class="btn btn-outline-danger btn-sm "(click)='deleteStudent(stud.sid)'>Delete</button>
         </td>
 
     </tr>
 
 
 </table>
+
+
+</div>
