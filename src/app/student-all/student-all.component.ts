@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'selenium-webdriver';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
 
@@ -9,6 +9,7 @@ import { StudentService } from '../student.service';
   styleUrls: ['./student-all.component.css']
 })
 export class StudentAllComponent implements OnInit {
+  
 
   students:Student[]=[];
   message:string='';
@@ -31,7 +32,7 @@ export class StudentAllComponent implements OnInit {
   
   deleteStudent(id:number)
   {
-    console.log('data is'+id);
+    
     this.service.deleteStudent(id).subscribe(
       (data)=>{
         this.message=data,
@@ -40,6 +41,10 @@ export class StudentAllComponent implements OnInit {
       (error)=>{console.log(error)}
 
     );
+  }
+  editStudent(id:number)
+  {
+    console.log("data "+id);
   }
 
 }

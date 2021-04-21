@@ -9,6 +9,7 @@ import { StudentCreateComponent } from './student-create/student-create.componen
 import { StudentEditComponent } from './student-edit/student-edit.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StudentService } from './student.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StudentService } from './student.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

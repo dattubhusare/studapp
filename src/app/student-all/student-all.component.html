@@ -19,7 +19,7 @@
         <td>{{stud.cdisc}}</td>
         <td>{{stud.gst}}</td>
         <td>
-            <button class="btn btn-outline-warning btn-sm m-2" >Edit</button>
+            <button class="btn btn-outline-warning btn-sm m-2"(click)='editStudent(stud.sid)' >Edit</button>
             <button class="btn btn-outline-danger btn-sm "(click)='deleteStudent(stud.sid)'>Delete</button>
         </td>
 
@@ -28,5 +28,6 @@
 
 </table>
 
+  
 
 </div>
